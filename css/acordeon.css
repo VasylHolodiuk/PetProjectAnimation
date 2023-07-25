@@ -21,13 +21,13 @@
     transition-duration: 1s;
 }
 
-.section-3 .section-3-image:first-child {
+/* .section-3 .section-3-image:first-child {
     opacity: 1;
     transition-duration: 1s;
-}
+} */
 
 .section-3 .section-3-image.active {
     opacity: 1;
 }
 
-.section-3 
+/* .section-3  */
