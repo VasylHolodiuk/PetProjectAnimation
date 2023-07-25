@@ -39,7 +39,6 @@ function chechIfMobile() {
                 scrub: true,
                 end: ()=> "+=" + (acordeonSection.offsetHeight + 500) * (elements.length),
                 onUpdate: self => {
-                    console.log('acordeon');
                     killWhenFast(self);
                     animation(self);   
                 },
@@ -119,13 +118,41 @@ function changeActive(progress, animateBefore, animateAfter, elemIndex, changeEl
                     images[id].classList.remove('active');
                     element.classList.remove('active');
                     body.style.height = '0px';
+                    setToDefolt(id);
                 }
                 else {
                     images[id].classList.add('active');
                     element.classList.add('active');
                     body.style.height = body.scrollHeight + 'px';
+                    animVoronka(id);
                 }
             });
         }
     }
+}
+
+function animVoronka(id) {
+    const voronka = images[id].querySelectorAll('.anim-voronka');
+    const centerX = 250;
+    const centerY = 270;
+
+    voronka?.forEach(element => {
+        element.setAttribute('x', centerX);
+        element.setAttribute('y', centerY);
+    });
+
+    setTimeout(() => {
+        
+    }, 50);
+}
+
+function setToDefolt(id) {
+    const voronka = images[id].querySelectorAll('.anim-voronka');
+
+    setTimeout(() => {
+        voronka?.forEach(element => {
+            element.setAttribute('x', element.dataset.x);
+            element.setAttribute('y', element.dataset.y);
+        });
+    }, 100);
 }
