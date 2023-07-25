@@ -1,0 +1,33 @@
+.section-3 .accordion-item .accordion-item__body {
+    height: 0px;
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+.section-3 .accordion-item .truncate  {
+    transition-duration: 1s;
+}
+
+.section-3 .accordion-item.active .truncate  {
+    color: #705FF6;
+}
+
+.section-3 .accordion-item.active .accordion-item__body {
+    opacity: 1;
+}
+
+.section-3 .section-3-image {
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+.section-3 .section-3-image:first-child {
+    opacity: 1;
+    transition-duration: 1s;
+}
+
+.section-3 .section-3-image.active {
+    opacity: 1;
+}
+
+.section-3 

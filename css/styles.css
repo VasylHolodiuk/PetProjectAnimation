@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap');
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Kanit', sans-serif;
+}
+
+.custom-text-gradient {
+  background: linear-gradient(to right, #F19C7D 0%, #7C3CF4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
