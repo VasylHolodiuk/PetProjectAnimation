@@ -140,6 +140,7 @@ function animVoronka(id) {
     const centerY = 270;
     const coinsX = 275;
     const coinsY = 360;
+    let y = 170;
 
     voronka?.forEach(element => {
         gsap.set(element, { attr: { x: centerX } });
@@ -148,108 +149,46 @@ function animVoronka(id) {
 
     if (coins[0]) {
         if (!coins[0]?.classList.contains('animate')) {
+            coins.forEach(element => {
+                if (element.classList.contains('man')) {
+                    gsap.set(element, {
+                        y: '-=30'
+                    })                        
+                }
+            });
             setTimeout(() => {
                 coins[0].classList.add('animate');
-                gsap.to(coins[0], {
-                    duration: 1, // Тривалість першої анімації (1 секунда)
-                    attr: { y: coinsY + 170 },
-                    onComplete: function() {
-                    // Код, який виконується після завершення першої анімації
-                    console.log("Крок 1 завершений!");
+                let delay = 0;
+                coins.forEach(( element, id) => {
                     
-                    // Крок 2: Перемістіть елемент вліво на 20 одиниць
-                      gsap.to(coins[0], {
-                        duration: 0.5, x: "-=45", y: "-=15", ease: "linear",
-
-                        onComplete: function () {
-                          // Анімація повернулася до початкового значення
-                            gsap.to(coins[0], {
-                                duration: 0.5, x: "-=45", y: "+=15", ease: "linear",   
-
-                                onComplete: function () {
-                                    // Анімація повернулася до початкового значення
-                                    gsap.to(coins[0], {
-                                        duration: 0.5, x: "-=45", y: "-=15", ease: "linear",   
-                                        onComplete: function () {
-                                            // Анімація повернулася до початкового значення
-                                            gsap.to(coins[0], {
-                                                duration: 0.5, x: "-=45", y: "+=15", ease: "linear",                  
-                                            });
-                                        },               
-                                    });
-                                },
-                            });
-                        },
-                      });
-                    }
-                });
-                gsap.to(coins[1], {
-                    delay: 1,
-                    duration: 1, // Тривалість першої анімації (1 секунда)
-                    attr: { y: coinsY + 170 },
-                    onComplete: function() {
-                    // Код, який виконується після завершення першої анімації
-                    console.log("Крок 1 завершений!");
-                    
-                    // Крок 2: Перемістіть елемент вліво на 20 одиниць
-                      gsap.to(coins[1], {
-                        duration: 0.5, x: "-=45", y: "-=15", ease: "linear",
-
-                        onComplete: function () {
-                          // Анімація повернулася до початкового значення
-                            gsap.to(coins[1], {
-                                duration: 0.5, x: "-=45", y: "+=15", ease: "linear",   
-
-                                onComplete: function () {
-                                    // Анімація повернулася до початкового значення
-                                    gsap.to(coins[1], {
-                                        duration: 0.5, x: "-=45", y: "-=15", ease: "linear",   
-                                        onComplete: function () {
-                                            // Анімація повернулася до початкового значення
-                                            gsap.to(coins[1], {
-                                                duration: 0.5, x: "-=45", y: "+=15", ease: "linear",                  
-                                            });
-                                        },               
-                                    });
-                                },
-                            });
-                        },
-                      });
-                    }
-                });
-                gsap.to(coins[2], {
-                    delay: 2,
-                    duration: 1, // Тривалість першої анімації (1 секунда)
-                    attr: { y: coinsY + 170 },
-                    onComplete: function() {
-                    // Код, який виконується після завершення першої анімації
-                    console.log("Крок 1 завершений!");
-                    
-                    // Крок 2: Перемістіть елемент вліво на 20 одиниць
-                      gsap.to(coins[2], {
-                        duration: 0.5, x: "-=45", y: "-=15", ease: "linear",
-
-                        onComplete: function () {
-                          // Анімація повернулася до початкового значення
-                            gsap.to(coins[2], {
-                                duration: 0.5, x: "-=45", y: "+=15", ease: "linear",   
-
-                                onComplete: function () {
-                                    // Анімація повернулася до початкового значення
-                                    gsap.to(coins[2], {
-                                        duration: 0.5, x: "-=45", y: "-=15", ease: "linear",   
-                                        onComplete: function () {
-                                            // Анімація повернулася до початкового значення
-                                            gsap.to(coins[2], {
-                                                duration: 0.5, x: "-=45", y: "+=15", ease: "linear",                  
-                                            });
-                                        },               
-                                    });
-                                },
-                            });
-                        },
-                      });
-                    }
+                    gsap.to(element, {
+                        delay: delay,
+                        duration: 1, 
+                        attr: { y: coinsY + y },
+                        onComplete: function() {
+                          gsap.to(element, {
+                            duration: 0.5, x: "-=45", y: "-=15", ease: "linear",
+    
+                            onComplete: function () {
+                                gsap.to(element, {
+                                    duration: 0.5, x: "-=45", y: "+=15", ease: "linear",   
+    
+                                    onComplete: function () {
+                                        gsap.to(element, {
+                                            duration: 0.5, x: "-=45", y: "-=15", ease: "linear",   
+                                            onComplete: function () {
+                                                gsap.to(element, {
+                                                    duration: 0.5, x: "-=45", y: "+=15", ease: "linear",                  
+                                                });
+                                            },               
+                                        });
+                                    },
+                                });
+                            },
+                          });
+                        }
+                    });
+                    delay = delay + 1;
                 });
             }, 1000);
         }    
@@ -270,14 +209,10 @@ function setToDefolt(id) {
 
         if (coins[0]) {
             coins[0].classList.remove('animate');
-            gsap.killTweensOf(coins[0]);
-            gsap.set(coins[0], {x: 0, y: 0, attr:{ x: coinsX, y: coinsY }} );
-
-            gsap.killTweensOf(coins[1]);
-            gsap.set(coins[1], {x: 0, y: 0, attr:{ x: coinsX, y: coinsY }} );
-            
-            gsap.killTweensOf(coins[2]);
-            gsap.set(coins[2], {x: 0, y: 0, attr:{ x: coinsX, y: coinsY }} );
+            coins.forEach(element => {
+                gsap.killTweensOf(element);
+                gsap.set(element, {x: 0, y: 0, attr:{ x: coinsX, y: coinsY }} ); 
+            });
         }
     }, 100);
 }
