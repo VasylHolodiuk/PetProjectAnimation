@@ -28,6 +28,24 @@
 
 .section-3 .section-3-image.active {
     opacity: 1;
+    transition-duration: 0.2s;
+}
+
+@media (max-width:1280px){ 
+    .section-3 .section-3-image {
+        position: static;
+        opacity: 0;
+        transition-duration: 1s;
+        max-width: 100%;
+    }
+    .section-3 .image-hidden {
+        display: none;
+        height: 0px;
+    }  
+
+    .section-3 .section-3-image svg {
+        max-width: 100%;
+    }
 }
 
 .section-3 .section-3-image.active .anim-voronka {

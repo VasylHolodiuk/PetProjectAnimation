@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded',() => {
-
-  
-  
   window.scrollTo(0, 0)
   lax.init()
   lax.addDriver(
@@ -168,7 +165,6 @@ document.addEventListener('DOMContentLoaded',() => {
         start: 'bottom top', // Начало анимации, когда верх section-4 достигает центра экрана
         end: '150% top', // Конец анимации, когда нижняя часть section-4 достигает центра экрана
         scrub: true, // Плавное выполнение анимации при прокрутке
-     
       }
     });
     gsap.from('.section-6-heading', {
@@ -261,8 +257,6 @@ document.addEventListener('DOMContentLoaded',() => {
     })
   ], "<");
     
-      
-       
     lax.addElements('.section-2-heading', {
       scrollY: {
         translateY: [
@@ -403,7 +397,7 @@ document.addEventListener('DOMContentLoaded',() => {
       direction: 1,
       scrollTrigger: {
         trigger: '.section-1',
-        start: '50% top',
+        start: '-5% top',
         end: 'bottom top',
         scrub: true,
       }
@@ -482,7 +476,7 @@ document.addEventListener('DOMContentLoaded',() => {
       direction: 1,
       scrollTrigger: {
         trigger: '.section-6',
-        start: '50% top',
+        start: '30% top',
         end: 'bottom top',
         scrub: true,
       }
@@ -580,95 +574,96 @@ document.addEventListener('DOMContentLoaded',() => {
   
   ScrollTrigger.create({
     trigger: '.section-4',
-    start: "40% top",
+    start: "100% top",
     end: "bottom bottom",
     scrub: true,
   });
   
-  gsap.from('.section-4-image .svg-elem-8', {
-    opacity: 0,
-    y: '100%',
-    delay: 1.8,
-    scrollTrigger: {
-      trigger: '.section-4 ',
-      start: '50% 50%',
-      end: 'bottom 50%',
-    }
-  });
-  gsap.from('.section-4-image .svg-elem-9', {
-    opacity: 0,
-    y: '100%',
-    delay: 1.6,
-    scrollTrigger: {
-      trigger: '.section-4 ',
-      start: '50% 50%',
-      end: 'bottom 50%',
-    }
-  });
+  // gsap.from('.section-4-image .svg-elem-8', {
+  //   opacity: 0,
+  //   y: '100%',
+  //   delay: 1.8,
+  //   scrollTrigger: {
+  //     trigger: '.section-4 ',
+  //     start: '50% 50%',
+  //     end: 'bottom 50%',
+  //   }
+  // });
+  // gsap.from('.section-4-image .svg-elem-9', {
+  //   opacity: 0,
+  //   y: '100%',
+  //   delay: 1.6,
+  //   scrollTrigger: {
+  //     trigger: '.section-4 ',
+  //     start: '50% 50%',
+  //     end: 'bottom 50%',
+  //   }
+  // });
   
-  gsap.from('.section-4-image .svg-elem-13', {
-    opacity: 0,
-    y: '100%',
-    delay: 1.4,
-    scrollTrigger: {
-      trigger: '.section-4 ',
-      start: '50% 50%',
-      end: 'bottom 50%',
-    }
-  });
-  gsap.from('.section-4-image .svg-elem-14', {
-    opacity: 0,
-    y: '100%',
-    delay: 1.2,
-    scrollTrigger: {
-      trigger: '.section-4 ',
-      start: '50% 50%',
-      end: 'bottom 50%',
-    }
-  });
+  // gsap.from('.section-4-image .svg-elem-13', {
+  //   opacity: 0,
+  //   y: '100%',
+  //   delay: 1.4,
+  //   scrollTrigger: {
+  //     trigger: '.section-4 ',
+  //     start: '50% 50%',
+  //     end: 'bottom 50%',
+  //   }
+  // });
+  // gsap.from('.section-4-image .svg-elem-14', {
+  //   opacity: 0,
+  //   y: '100%',
+  //   delay: 1.2,
+  //   scrollTrigger: {
+  //     trigger: '.section-4 ',
+  //     start: '50% 50%',
+  //     end: 'bottom 50%',
+  //   }
+  // });
   
-  gsap.from('.section-4-image .svg-elem-15', {
-    opacity: 0,
-    y: '100%',
-    delay: 1.2,
-    scrollTrigger: {
-      trigger: '.section-4 ',
-      start: '50% 50%',
-      end: 'bottom 50%',
-    }
-  });
+  // gsap.from('.section-4-image .svg-elem-15', {
+  //   opacity: 0,
+  //   y: '100%',
+  //   delay: 1.2,
+  //   scrollTrigger: {
+  //     trigger: '.section-4 ',
+  //     start: '50% 50%',
+  //     end: 'bottom 50%',
+  //   }
+  // });
   
-  gsap.from('.section-4-image .svg-elem-10', {
-    opacity: 0,
-    y: '100%',
-    delay: 1,
-    scrollTrigger: {
-      trigger: '.section-4 ',
-      start: '50% 50%',
-      end: 'bottom 50%',
-    }
-  });
+  // gsap.from('.section-4-image .svg-elem-10', {
+  //   opacity: 0,
+  //   y: '100%',
+  //   delay: 1,
+  //   scrollTrigger: {
+  //     trigger: '.section-4 ',
+  //     start: '50% 50%',
+  //     end: 'bottom 50%',
+  //   }
+  // });
   
-  gsap.from('.section-4-image .svg-elem-12', {
-    opacity: 0,
-    y: '100%',
-    delay: 0.6,
-    scrollTrigger: {
-      trigger: '.section-4 ',
-      start: '50% 50%',
-      end: 'bottom 50%',
-    }
-  });
-  gsap.from('.section-4-image .svg-elem-11', {
-    opacity: 0,
-    y: '100%',
-    delay: 0.8,
-    scrollTrigger: {
-      trigger: '.section-4 ',
-      start: '50% 50%',
-      end: 'bottom 50%',
-    }
-  });
+  // gsap.from('.section-4-image .svg-elem-12', {
+  //   opacity: 0,
+  //   y: '100%',
+  //   delay: 0.6,
+  //   scrollTrigger: {
+  //     trigger: '.section-4 ',
+  //     start: '50% 50%',
+  //     end: 'bottom 50%',
+  //   }
+  // });
+  // gsap.from('.section-4-image .svg-elem-11', {
+  //   opacity: 0,
+  //   y: '100%',
+  //   delay: 0.8,
+  //   scrollTrigger: {
+  //     trigger: '.section-4 ',
+  //     start: '50% 50%',
+  //     end: 'bottom 50%',
+  //   }
+  // });
+  
   gsap.from('.svg-stars', {
     opacity: 0,
     y: '100px',
